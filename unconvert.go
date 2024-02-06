@@ -269,7 +269,7 @@ func nomain() {
 }
 
 func Run(pass *analysis.Pass) []token.Position {
-	m := mergeEdits([]string{pass.Pkg.Path()}, [][]string{nil})
+	m := mergeEdits([]string{pass.Pkg.Path()}, allConfigs())
 	var conversions []token.Position
 	for _, positions := range m {
 		for pos := range positions {
